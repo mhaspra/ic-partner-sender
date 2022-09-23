@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: partner-sender-deployment
+  labels:
+    app: partner-sender
+spec:
+  selector:
+    matchLabels:
+      app: partner-sender
+  template:
+    metadata:
+      labels:
+        app: partner-sender
+    spec:
+      containers:
+      - name: partner-sender-container
+        image: ic-partner-sender:1.0
